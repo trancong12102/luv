@@ -1,12 +1,20 @@
 import { Carousel } from '@material-tailwind/react';
 import type { FunctionComponent } from 'react';
+import img1Src from '../assets/slider/IMG_1.jpeg';
+import img2Src from '../assets/slider/IMG_2.jpeg';
+import img3Src from '../assets/slider/IMG_3.jpeg';
+import img4Src from '../assets/slider/IMG_4.jpeg';
+import img5Src from '../assets/slider/IMG_5.jpeg';
+import img6Src from '../assets/slider/IMG_6.jpeg';
 
-const images = Array.from({ length: 6 }, (_, i) => i + 1).map((i) => {
-  return {
-    src: `/slider/IMG_${i}.jpeg`,
-    alt: `image ${i}`,
-  };
-});
+const images = [img1Src, img2Src, img3Src, img4Src, img5Src, img6Src].map(
+  (src, i) => {
+    return {
+      src,
+      alt: `image ${i}`,
+    };
+  },
+);
 
 const Arrow: FunctionComponent<{
   handle: () => void;

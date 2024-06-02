@@ -1,9 +1,14 @@
 import type { FunctionComponent } from 'react';
 import { Snowfall } from 'react-snowfall';
+import snow1 from '../assets/snowfall/snow1.png';
+import snow2 from '../assets/snowfall/snow2.png';
+import snow3 from '../assets/snowfall/snow3.png';
+import snow4 from '../assets/snowfall/snow4.png';
+import snow5 from '../assets/snowfall/snow5.png';
 
-const images = Array.from({ length: 5 }, (_, i) => i + 1).map((i) => {
+const images = [snow1, snow2, snow3, snow4, snow5].map((src) => {
   const img = document.createElement('img');
-  img.src = `/snowfall/snow${i}.png`;
+  img.src = src;
   return img;
 });
 
