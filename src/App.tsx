@@ -43,24 +43,26 @@ function App() {
       <SnowfallScene />
       <div className="max-w-screen-sm w-full flex items-center flex-col">
         <ImageSlider />
-        <div className="pt-6 text-xl">the times we together</div>
+        <div className="pt-4 text-lg">the times we together</div>
         <div className="flex flex-row">
           <DateIcon value={days} unit={'days'} />
           <DateIcon value={hours} unit={'hours'} />
           <DateIcon value={minutes} unit={'min'} />
         </div>
-        <div className="pt-6">
+        <div className="pt-5">
           <img
             src={HeartIcon}
             alt="I Love You"
-            className="object-contain h-20"
+            className="object-contain h-12"
           />
         </div>
-        <div className="flex items-center text-3xl pt-4 text-gray-900">
+        <div className="flex items-center text-xl pt-2 text-gray-900">
           CONG.T <div className="text-pink text-7xl px-1 pr-2">&</div>
           H.TRANG
         </div>
-        <AudioPlayer />
+        <div className="pt-1">
+          <AudioPlayer />
+        </div>
       </div>
     </div>
   );

@@ -6,14 +6,9 @@ export const DateIcon: FunctionComponent<{
 }> = ({ unit, value }) => {
   return (
     <div className="flex flex-row items-center font-['Cheri_Liney']">
-      <div className="text-4xl">{value}</div>
+      <div className="text-2xl">{value}</div>
       <div className="px-1 flex flex-col items-center">
-        <div
-          className="date-icon text-4xl text-pink w-fit pl-2 pt-6"
-          data-text="days"
-        >
-          /&nbsp;
-        </div>
+        <div className="text-2xl text-pink w-fit pl-2 pt-6">/&nbsp;</div>
         <div className="text-white">{unit}</div>
       </div>
     </div>

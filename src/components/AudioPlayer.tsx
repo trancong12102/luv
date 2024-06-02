@@ -7,7 +7,7 @@ export const AudioPlayer: FunctionComponent = () => {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="pt-5">
+    <>
       <IconButton
         onClick={() => setPlaying(!playing)}
         className={`rounded-full ${playing && 'animate-spin'}`}
@@ -24,6 +24,6 @@ export const AudioPlayer: FunctionComponent = () => {
       <div className="hidden">
         <ReactPlayer playing={playing} url={audioSrc} loop={true} />
       </div>
-    </div>
+    </>
   );
 };

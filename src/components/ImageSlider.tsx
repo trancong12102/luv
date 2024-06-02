@@ -34,7 +34,7 @@ const Arrow: FunctionComponent<{
 export const ImageSlider: FunctionComponent = () => {
   return (
     <Carousel
-      className="w-60 h-80 border-8"
+      className="w-44 h-64 border-8"
       placeholder={'Slider'}
       onPointerEnterCapture={() => {}}
       onPointerLeaveCapture={() => {}}
