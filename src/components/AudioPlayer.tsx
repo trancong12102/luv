@@ -1,5 +1,5 @@
 import './AudioPlayer.css';
-import { IconButton } from '@material-tailwind/react';
+import IconButton from '@material-tailwind/react/components/IconButton';
 import { type FunctionComponent, useState } from 'react';
 import ReactPlayer from 'react-player';
 import audioSrc from '../assets/audio.mp3';
