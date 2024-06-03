@@ -23,7 +23,11 @@ export const ImageSlider: FunctionComponent = () => {
     {
       loop: true,
     },
-    [Autoplay()],
+    [
+      Autoplay({
+        stopOnInteraction: false,
+      }),
+    ],
   );
 
   return (
