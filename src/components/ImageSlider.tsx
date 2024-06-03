@@ -1,4 +1,6 @@
-import { Carousel } from '@material-tailwind/react';
+import './ImageSlider.css';
+import Autoplay from 'embla-carousel-autoplay';
+import useEmblaCarousel from 'embla-carousel-react';
 import type { FunctionComponent } from 'react';
 import img1Src from '../assets/slider/IMG_1.jpeg';
 import img2Src from '../assets/slider/IMG_2.jpeg';
@@ -16,43 +18,52 @@ const images = [img1Src, img2Src, img3Src, img4Src, img5Src, img6Src].map(
   },
 );
 
-const Arrow: FunctionComponent<{
-  handle: () => void;
-  type: 'prev' | 'next';
-}> = ({ handle, type }) => {
-  return (
-    <button
-      type="button"
-      onClick={handle}
-      className={`absolute w-16 h-full ${
-        type === 'prev' ? 'left-0' : 'right-0'
-      }`}
-    />
-  );
-};
-
 export const ImageSlider: FunctionComponent = () => {
+  const [emblaRef, _emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+    },
+    [Autoplay()],
+  );
+
   return (
-    <Carousel
-      className="w-44 h-64 border-8 bg-white"
-      placeholder={'Slider'}
-      onPointerEnterCapture={() => {}}
-      onPointerLeaveCapture={() => {}}
-      autoplay={true}
-      autoplayDelay={3000}
-      loop={true}
-      navigation={() => <div />}
-      nextArrow={({ handleNext }) => <Arrow handle={handleNext} type="next" />}
-      prevArrow={({ handlePrev }) => <Arrow handle={handlePrev} type="prev" />}
-    >
-      {images.map(({ src, alt }) => (
-        <img
-          src={src}
-          alt={alt}
-          key={alt}
-          className="h-full w-full object-cover"
-        />
-      ))}
-    </Carousel>
+    <section className="embla max-w-40 h-auto border-8 border-white bg-white">
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container">
+          {images.map(({ src, alt }) => (
+            <div className="embla__slide" key={alt}>
+              <div className="w-full h-full flex items-end justify-center">
+                <img
+                  src={src}
+                  alt={alt}
+                  className="object-cover h-full w-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    // <Carousel
+    //   className="w-44 h-64 border-8 bg-white"
+    //   placeholder={'Slider'}
+    //   onPointerEnterCapture={() => {}}
+    //   onPointerLeaveCapture={() => {}}
+    //   autoplay={true}
+    //   autoplayDelay={3000}
+    //   loop={true}
+    //   navigation={() => <div />}
+    //   nextArrow={({ handleNext }) => <Arrow handle={handleNext} type="next" />}
+    //   prevArrow={({ handlePrev }) => <Arrow handle={handlePrev} type="prev" />}
+    // >
+    //   {images.map(({ src, alt }) => (
+    //     <img
+    //       src={src}
+    //       alt={alt}
+    //       key={alt}
+    //       className="h-full w-full object-cover"
+    //     />
+    //   ))}
+    // </Carousel>
   );
 };

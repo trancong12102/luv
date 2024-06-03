@@ -1,3 +1,4 @@
+import './AudioPlayer.css';
 import { IconButton } from '@material-tailwind/react';
 import { type FunctionComponent, useState } from 'react';
 import ReactPlayer from 'react-player';
@@ -15,9 +16,6 @@ export const AudioPlayer: FunctionComponent = () => {
         size={'lg'}
         onPointerEnterCapture={() => {}}
         onPointerLeaveCapture={() => {}}
-        onEnded={() => {
-          console.log('ended');
-        }}
       >
         <i className="gg-music text-white" />
       </IconButton>

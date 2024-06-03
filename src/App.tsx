@@ -44,7 +44,9 @@ function App() {
       <Background />
       <SnowfallScene />
       <div className="max-w-screen-sm w-full flex items-center flex-col">
-        <ImageSlider />
+        <div className="pt-3">
+          <ImageSlider />
+        </div>
         <div className="pt-4 text-lg">the times we together</div>
         <div className="flex flex-row">
           <DateIcon value={days} unit={'days'} />
