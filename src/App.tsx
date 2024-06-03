@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import HeartIcon from './assets/heart.svg';
 import { AudioPlayer } from './components/AudioPlayer.tsx';
+import { Background } from './components/Background.tsx';
 import { DateIcon } from './components/DateIcon.tsx';
 import { ImageSlider } from './components/ImageSlider.tsx';
 import { SnowfallScene } from './components/SnowfallScene.tsx';
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen text-gray-800 flex items-center justify-center">
+      <Background />
       <SnowfallScene />
       <div className="max-w-screen-sm w-full flex items-center flex-col">
         <ImageSlider />
